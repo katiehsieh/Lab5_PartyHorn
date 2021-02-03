@@ -23,12 +23,17 @@ document.getElementById("honk-btn").addEventListener("click", playSound);
 
 // get value from input field and update volume
 function fieldChanged() {
-    updateVolume(document.getElementById("volume-number").value);
+    let volume = document.getElementById("volume-number").value;
+    if (volume > 100) {
+        volume = 100;
+    }
+    updateVolume(volume);
 }
 
 // get value from slider and update volume
 function sliderChanged() {
-    updateVolume(document.getElementById("volume-slider").value);
+    let volume = document.getElementById("volume-slider").value;
+    updateVolume(volume);
 }
 
 // get value from radio and update sound
