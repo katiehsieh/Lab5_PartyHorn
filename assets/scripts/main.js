@@ -7,11 +7,10 @@ const PARTY_HORN = 2;
 // ===== event listeners =====
 
 // input field
-document.getElementById("volume-number").addEventListener("change", inputChanged);
-document.getElementById("volume-number").addEventListener("mousedown", inputChanged);
+document.getElementById("volume-number").addEventListener("input", fieldChanged);
 
 // slider
-document.getElementById("volume-slider").addEventListener("change", sliderChanged);
+document.getElementById("volume-slider").addEventListener("input", sliderChanged);
 
 // radio
 document.getElementById("audio-selection").addEventListener("change", radioChanged);
@@ -23,7 +22,7 @@ document.getElementById("honk-btn").addEventListener("click", playSound);
 // ===== functions =====
 
 // get value from input field and update volume
-function inputChanged() {
+function fieldChanged() {
     updateVolume(document.getElementById("volume-number").value);
 }
 
